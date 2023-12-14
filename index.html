@@ -12,7 +12,59 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #Projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    #Projects h2{font-size: 35px;}
+    #cell {
+      text-align: center;
+      margin: 10px;
+    }
 
+    .projeccts {
+      text-decoration: none;
+      color: #333;
+    }
+    .projeccts-section{
+    padding: 0 50px;
+    margin-bottom: 100px;
+
+    }
+    .projeccts-section .text{
+        text-align: center;
+        width: 100%;
+
+    }
+    #show-source {
+      display: block;
+      margin: 5px auto; /* Center the button horizontally */
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007BFF;
+      border: 2px solid #007BFF;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+  
+    }
+    .img-project{
+      width: 400px;
+      height: 200px;
+    }
+    button#show-source {
+      margin-top: 10px;
+    width: 100%;
+    background: content-box;
+    color: #2535e9;
+    height: 30px;
+}
+  </style>
   <title>Portfolio</title>
 </head>
 <body>
@@ -52,15 +104,13 @@
             <i class="fa-solid fa-code"></i>
             <span>Skills</span>
           </a>
-          
-          <a href="#testimony">
-            <i class="fa-solid fa-pen"></i>
-            <span>Testimony</span>
-          </a>
-          
+                   
           <a href="#contact">
             <i class="fa-solid fa-envelope"></i>
             <span>Contact</span>
+          </a>
+          <a href="#Projects" id="projects-link">
+            <span>Projects</span>
           </a>
         </div>
       </div>
@@ -96,8 +146,43 @@
       
       </div>
     </section>
+    <!-- Section 3 Project -->
+    <section id="Projects" class="projeccts-section">
+      <h2>Projects</h2>
+      <div class="text">
 
-    
+        In the past, I have been involved in many different projects, below is a list of them.</div>
+
+        <div id="cells">
+          <div id="cell">          
+            <a href="https://github.com/Thanh5701/Tan_Thanh" class="projeccts">
+            <h1 id="title-project">Portfolio</h1>
+            <img src="images/Profolio.jpg" class="img-project" alt="html logo">
+            <button id="show-source">Show source</button>
+            </a>
+          </div>
+        </div>
+        <div id="cells">
+          <div id="cell">          
+            <a href="https://github.com/maivudhsp/TNVHDG.git" class="projeccts">
+            <h1 id="title-project">Văn Học Dân Gian</h1>
+            <img src="images/Vanhocdangian.jpg" class="img-project" alt="html logo">
+            <button id="show-source">Show source</button>
+            </a>
+          </div>
+        </div>
+        <div id="cells">
+          <div id="cell">          
+            <a href="https://github.com/thanhlam1909/Clothes---store" class="projeccts">
+            <h1 id="title-project">Clothes store</h1>
+            <img src="images/Clothes-store.jpg" class="img-project" alt="html logo">
+            <button id="show-source">Show source</button>
+            </a>
+          </div>
+        </div>
+
+        
+    </section>
 
     <!-- SECTION 4: Contact -->
     <section id="contact" class="contact-section">
@@ -121,6 +206,24 @@
         </form>
       </div>
     </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Scroll to Projects section when clicking the Projects link
+        document.getElementById("projects-link").addEventListener("click", function(event) {
+          event.preventDefault();
+    
+          // Calculate the target offset
+          const targetSection = document.getElementById("Projects");
+          const offset = targetSection.offsetTop;
+    
+          // Smooth scroll to the target section
+          window.scrollTo({
+            top: offset,
+            behavior: "smooth"
+          });
+        });
+      });
+    </script>
   </main>
 </body>
 </html>

@@ -204,10 +204,10 @@ nav .right a span {
 
 .contact-section h2 {
   font-size: 35px;
+  text-align: center;
 }
 
 .contact-section .group {
-  display: flex;
   gap: 50px;
 }
 
